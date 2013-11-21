@@ -1,0 +1,2 @@
+module MyjobsHelper
+end

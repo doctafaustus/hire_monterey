@@ -1,0 +1,130 @@
+<% title "Search Jobs" %>
+
+<div id="indexwrap">
+
+	<div id="leftcol">
+		
+		<div id="AdvancedFind">
+			<strong style="font-size: 14.6px; padding-left: 5px">Advanced Find</strong></br></br>
+		</div>
+
+		<div id="sortlink">
+			<table style="padding-left: 4px">
+				<tr>
+					<td valign="top"><%= image_tag("sorticon.png") %></td>
+					<td valign="middle"><%= sort_link @search, :created_at, "Sort By Date Listed" %>
+				</tr>
+			</table></br>
+		</div>
+
+
+<%= search_form_for @search do |f| %>
+		
+	<div class="radio-toolbar">
+
+		<%= image_tag("calendaricon.png") %> <strong style="font-size: 14px; color: #1668e4">Date Posted</strong></br>
+
+		<%= radio_button_tag("q[created_at_gt]", Time.now - 1.days) %>
+		<%= label_tag @oneday_x, "Since 24 Hours" %></br>
+
+		<%= radio_button_tag("q[created_at_gt]", Time.now - 7.days) %>
+		<%= label_tag @oneweek_x, "Since Last Week" %></br>
+
+		<%= radio_button_tag("q[created_at_gt]", Time.now - 14.days) %>
+		<%= label_tag @twoweeks_x, "Since 2 Weeks Ago" %></br>
+
+		<%= radio_button_tag("q[created_at_gt]", Time.now - 30.days) %>
+		<%= label_tag @onemonth_x, "Since 1 Month Ago" %></br></br>
+
+		<!-- <%= radio_button_tag("q[created_at_gt]", Time.now - 365.days) %>
+		<%= label_tag @anytime_x, "Any Time" %></br></br> -->
+
+	<!--<%= f.select :job_type_cont, options_for_select(['Full time', 'Part time', 'Contractor', 'Seasonal/Temp', 'Intern']) %> -->
+
+		<%= image_tag("placeicon.png") %> <strong style="font-size: 14px; color: #1668e4">Location</strong></br>
+
+		<%= radio_button_tag("q[location_eq]", "Carmel") %>
+		<%= label_tag "q[location_eq]_Carmel", "Carmel" %></br>
+
+		<%= radio_button_tag("q[location_eq]", "Carmel Valley") %>
+		<%= label_tag "q[location_eq]_Carmel Valley", "Carmel Valley" %></br>
+
+		<%= radio_button_tag("q[location_eq]", "Gilroy") %>
+		<%= label_tag "q[location_eq]_Gilroy", "Gilroy" %></br>
+
+		<%= radio_button_tag("q[location_eq]", "Hollister") %>
+		<%= label_tag "q[location_eq]_Hollister", "Hollister" %></br>
+
+		<%= radio_button_tag("q[location_eq]", "Marina") %>
+		<%= label_tag "q[location_eq]_Marina", "Marina" %></br>
+
+		<%= radio_button_tag("q[location_eq]", "Monterey") %>
+		<%= label_tag "q[location_eq]_Monterey", "Monterey" %></br>
+
+		<%= radio_button_tag("q[location_eq]", "Pacific Grove") %>
+		<%= label_tag "q[location_eq]_Pacific Grove", "Pacific Grove" %></br>
+
+		<%= radio_button_tag("q[location_eq]", "Prunedale") %>
+		<%= label_tag "q[location_eq]_Prunedale", "Prunedale" %></br>
+
+		<%= radio_button_tag("q[location_eq]", "Santa Cruz") %>
+		<%= label_tag "q[location_eq]_Santa Cruz", "Santa Cruz" %></br>
+
+		<%= radio_button_tag("q[location_eq]", "Salinas") %>
+		<%= label_tag "q[location_eq]_Salinas", "Salinas" %></br>
+
+		<%= radio_button_tag("q[location_eq]", "Seaside") %>
+		<%= label_tag "q[location_eq]_Seaside", "Seaside" %></br>
+
+		<%= radio_button_tag("q[location_eq]", "Watsonville") %>
+		<%= label_tag "q[location_eq]_Watsonville", "Watsonville" %></br>
+
+	    </br>
+		<%= image_tag("briefcaseicon.png") %> <strong style="font-size: 14px; color: #1668e4">Job Type</strong></br>
+		<%= radio_button_tag("q[job_type_eq]", "Part time") %>
+		<%= label_tag "q[job_type_eq]_Part time", "Part Time" %></br>
+
+		<%= radio_button_tag("q[job_type_eq]", "Full time") %>
+		<%= label_tag "q[job_type_eq]_Full time", "Full Time" %></br>
+
+		<%= radio_button_tag("q[job_type_eq]", "Seasonal/Temp") %>
+		<%= label_tag "q[job_type_eq]_Seasonal/Temp", "Seasonal/Temp" %></br>
+
+		<%= radio_button_tag("q[job_type_eq]", "Intern") %>
+		<%= label_tag "q[job_type_eq]_Intern", "Internship" %></br>
+
+		<%= radio_button_tag("q[job_type_eq]", "Contractor") %>
+		<%= label_tag "q[job_type_eq]_Contractor", "Contractor" %></br></br>
+
+		<div id="indexsearchbutton">
+			<%= f.text_field :description_or_position_cont, placeholder: 'Enter job keyword' %>
+		</div>
+	</div>
+		<div id="indexsearchbutton2">
+			<%= f.submit "Search" %>
+		</div>
+	<% end %>
+
+
+	</div>
+
+		<% @jobs.each do |job| %>
+
+	<div id="rightcol">
+		<div class="<%= cycle("odd", "even") %>">
+				<span style="font-size: .8em; float: right"><%= job.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%b %d, %Y") %></span>
+				<%= link_to job.position, job_path(job) %></br>
+				<%= job.company %></br>
+				<span style="color: gray"><%= job.location %></span>
+				</br>
+				<% plain_text = strip_tags(job.description) %>
+				<%= plain_text[0, 150].html_safe + "..." %>
+
+		</div>
+	</div>
+
+	<% end %>
+</div>
+
+
+<%= will_paginate @posts %>

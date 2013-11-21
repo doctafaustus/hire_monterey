@@ -1,0 +1,19 @@
+<% title "Find Jobs in Monterey Bay" %>
+
+<div id="homewrap">
+	<%= link_to image_tag("Logo.png") %>
+
+	
+</div>
+
+<div class="home">
+		<div class="intro">
+		<h1>Find Jobs in Monterey Bay</h1>
+	</div>
+	<%= search_form_for @search do |f| %>
+		<%= f.text_field :description_or_position_or_company_cont %>
+		<%= f.submit "Find Jobs" %>
+	<% end %>
+
+</div>
+

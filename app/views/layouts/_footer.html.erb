@@ -1,0 +1,34 @@
+
+	<footer class="footer">
+			<div id="line"></div>
+
+
+		<% if @intropage %>
+			<div id="navigation">
+			<li>
+				<li><%= link_to "Terms & Conditions", terms_path %></li> 
+				<li><%= link_to "Privacy Policy", privacy_path %></li>
+			</ul>
+			</div>
+			<div id="seperate_text_home">
+				©2013 Copyright Hire Monterey | All rights reserved
+			</div>
+		<% else %>
+			<nav>
+			<li>
+				<li><%= link_to "Terms & Conditions", terms_path %></li>
+				<li><%= link_to "Privacy Policy", privacy_path %></li>
+			</ul>
+			</nav>
+
+			<div id="seperate_text">
+				©2013 Copyright Hire Monterey | All Rights Reserved
+			</div>
+		<% end %>
+
+
+
+	</footer>
+
+
+

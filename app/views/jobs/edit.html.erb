@@ -1,0 +1,70 @@
+<% title "Edit Job" %>
+
+<% require 'rails_autolink' %>
+
+<div id="indexwrap">
+
+  <div id="editdiv">
+    <h2>Edit Job</h2>
+
+    <% if current_user %>
+
+      <%= form_for(@job) do |f| %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+
+        <p>
+          <%= f.label :position %><br>
+          <%= f.text_field :position %>
+        </p>
+       
+        <p>
+          <%= f.label :company %><br>
+          <%= f.text_field :company %>
+        </p>
+       
+        <p>
+          <%= f.label :location %><br>
+         <%= f.select :location, ["Carmel", "Carmel Valley", "Gilroy", "Hollister", "Marina", "Monterey", "Pacific Grove", "Prunedale", "Salinas", "Santa Cruz", "Seaside", "Watsonville"] %>
+        </p>
+
+        <p>
+          <%= f.label :job_type %><br>
+          <%= f.select :job_type, ["Full time", "Part time", "Seasonal/Temp", "Intern", "Contractor"] %>
+        </p>
+
+        <p>
+          <%= f.label :compensation %><br>
+          <%= f.text_field :compensation %>
+        </p>
+
+        <p>
+          <%= f.label :description %><br>
+          <%= f.text_area :description, :class => "tinymce", :rows => 30, :cols => 80 %>
+        </p>
+
+        <p>
+          <%= f.submit %>
+        </p>
+      <% end %>
+
+    <% else %>
+      <p>
+        Please sign in to continue.
+      </p>  
+    <% end %>
+  </div>
+</div>
+<%= tinymce %>
+
+
+<script>
+if($('#text_field').val() ==  "") 
+   $('#submitButtonId').attr('disabled', true);
+
+$('#text_field').keyup(function(){
+      if($('#text_field').val() !=  "") 
+           $('#submitButtonId').attr('disabled', false);    
+  else
+     $('#submitButtonId').attr('disabled', true);   
+});
+</script>

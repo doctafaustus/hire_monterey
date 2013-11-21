@@ -1,0 +1,38 @@
+<% title @job.position %>
+
+<% require 'rails_autolink' %>
+
+<div id="indexwrap">
+	<div id="showwrap">
+		<strong style="font-family: Arial; font-size: 18px; padding-left: 3px; color: #1B3BE0; line-height: 1.8em"><%= @job.position %></strong></br>
+
+		<div class="showtable">
+			<table>
+				<tr>
+					<th><strong>Company:</strong></th>
+					<td><%= @job.company %></td>
+				</tr>
+				<tr>
+					<th><strong>Location:</strong></th>
+					<td><%= @job.location %></td>
+				<tr>
+					<th><strong>Job Type:</strong></th>
+					<td><%= @job.job_type %></td>
+				<tr>
+					<th><strong>Compensation:</strong></th>
+					<td><%= @job.compensation %></td>
+				</tr>
+			</table>
+		</div>
+		</br>
+		<div id="jobdescription">
+			<%= auto_link(@job.description.html_safe, :all, :target => "_blank") %></br></br>
+		</div>
+
+		<div id="back">
+			<%= link_to 'Back to Previous Page', :back %>
+		</div>
+		</br>
+		</br>
+	</div>
+</div>

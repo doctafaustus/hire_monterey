@@ -1,0 +1,27 @@
+<% title "Sign Up" %>
+
+</br></br>
+<div id="indexwrap">
+  <div class="signup">
+      <div id="signupbox">
+      <h2 style="color: #E98331">Sign Up</h2>
+
+      <%= form_for :user, :url => {:action => :create} do |f| %>
+
+        <p>
+          <div id="label"><%= f.label :email %>:<br /></div>
+          <%= f.text_field :email %>
+        </p>
+        <p>
+          <div id="label"><%= f.label :password %>:<br /></div>
+          <%= f.password_field :password %>
+        </p>
+        <p>
+          <div id="label"><%= f.label :password_confirmation, "Password Confirmation" %>:<br /></div>
+          <%= f.password_field :password_confirmation %>
+        </p>
+        <p class="button"><%= f.submit "Create My Account" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
