@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131117231924) do
+ActiveRecord::Schema.define(:version => 20131118040458) do
 
   create_table "jobs", :force => true do |t|
     t.string   "position"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20131117231924) do
     t.string   "job_type"
     t.integer  "user_id"
     t.string   "location"
+  end
+
+  create_table "payment_notifications", :force => true do |t|
+    t.text     "params"
+    t.integer  "cart_id"
+    t.string   "status"
+    t.string   "transaction_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|
