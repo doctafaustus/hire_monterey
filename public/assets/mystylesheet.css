@@ -1,0 +1,843 @@
+/* Main All Jobs Page */
+.odd {
+    font-family: "Helvetica";
+    width: 595px;
+    padding: 7px;
+    margin-bottom: 4px;
+    background-color: #efefef;
+        height: 100px;
+        display: inline-block;
+}
+
+.even {
+    font-family: "Helvetica";
+    width: 595px;
+    padding: 7px;
+    margin-bottom: 4px;
+    background-color: white;
+    height: 100px;
+        display: inline-block;
+}
+
+.odd a {
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #E98331;
+}
+
+.even a {
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #E98331;
+}
+
+.odd a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+.even a:hover {
+    color: orange; 
+    text-decoration: underline;
+}
+
+.odd a:visited {
+    color: gray;
+    text-decoration: none;
+}
+
+.even a:visited {
+    color: gray;
+    text-decoration: none;
+}
+
+.even:hover {
+    outline: 1px solid #d0cfcf;
+}
+
+.odd:hover {
+    outline: 1px solid #d0cfcf;
+}
+
+#indexwrap {
+    width:800px;
+    margin: 0 auto;
+}
+
+#leftcol {
+    float:left;
+    width:180px;
+    background:#ececec;
+    font-family: Tahoma, Geneva, sans-serif;
+    outline: 1px solid #d0cfcf;
+    padding-bottom: 8px;
+        box-shadow: 1px 1px 1px #999;
+}
+
+#rightcol {
+    float:right;
+    width:609px;
+}
+
+
+
+
+/* Universal Text Styling */
+h1 
+{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 39px;
+}
+
+
+
+/* Job Show Page */
+.position {
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: black;
+}
+
+.company {
+    font-family: Arial, Trebuchet MS, Trebuchet, Verdana, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+.jobinfo {
+    font-family: Arial, Trebuchet MS, Trebuchet, Verdana, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+.jobdescription {
+    font-family: Arial, Trebuchet MS, Trebuchet, Verdana, Helvetica, sans-serif;
+    font-size: .9em;
+}
+
+
+/* Search Radio Buttons */
+.radio-toolbar input[type="radio"] {
+    display:none; 
+}
+
+.radio-toolbar label {
+    display:inline-block;
+    /* background-color:#ddd; */
+    padding:4px 22px;
+    font-size:12px;
+}
+
+.radio-toolbar input[type="radio"]:checked + label { 
+    /* background-color:#bbb; */
+    font-weight: bold;
+}
+
+.radio-toolbar :hover {
+    font-weight: bold;
+}
+
+.radio-toolbar {
+    margin-left: 5px;
+}
+
+
+/* Home Page */
+.intro h1 {
+    font-family: Arial;
+    text-shadow: 0 1px 4px #000000;
+    color: white;
+    font-size: 3em;
+    font-weight: bolder;
+    margin-top: 25px;
+}
+
+.home {
+    background-color:rgba(0,0,0,.2);
+    border: solid 1px #3e454e;
+    text-align: center; 
+    width: 750px; 
+    height: 208px;
+    padding: 5px; 
+    margin: 0 auto;
+    margin-top: 175px; 
+}
+
+.home input[type="submit"] {
+    font-size: 12px;
+    height: 47px;
+    width: 150px;
+    font-size: 23px;
+    font-weight: bold;
+    vertical-align:middle
+
+    box-shadow:inset 0px 1px 0px 0px #bee2f9;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7bc7f7), color-stop(1, #0c5fad) );
+    background:-moz-linear-gradient( center top, #7bc7f7 5%, #0c5fad 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7bc7f7', endColorstr='#0c5fad');
+    background-color:#7bc7f7;
+    -webkit-border-top-left-radius:0px;
+    -moz-border-radius-topleft:0px;
+    border-top-left-radius:0px;
+    -webkit-border-top-right-radius:0px;
+    -moz-border-radius-topright:0px;
+    border-top-right-radius:0px;
+    -webkit-border-bottom-right-radius:0px;
+    -moz-border-radius-bottomright:0px;
+    border-bottom-right-radius:0px;
+    -webkit-border-bottom-left-radius:0px;
+    -moz-border-radius-bottomleft:0px;
+    border-bottom-left-radius:0px;
+    text-indent:0;
+    border:1px solid #000;
+    display:inline-block;
+    color:#fff;
+    text-align:center;
+    }
+
+.home input[type="submit"]:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0c5fad), color-stop(1, #7bc7f7) );
+    background:-moz-linear-gradient( center top, #0c5fad 5%, #7bc7f7 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c5fad', endColorstr='#7bc7f7');
+    background-color:#0c5fad;
+    cursor:pointer
+}
+
+.home input {
+    width: 320px;
+    height: 38px;
+    font-size: 20px;
+    font-family: Verdana, Tahoma, sans-serif;
+    vertical-align:middle
+}
+
+#indexsearchbutton input {
+        width: 145px;
+}
+
+
+#homewrap {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#indexsearchbutton2 input[type="submit"] {
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+
+/* New Job */
+#postdiv {
+    width: 800px;
+    border: solid 1px #d0cfcf;
+    padding: 10px 10px 0px 10px;
+    font-family: Arial;
+    font-size: 13px;
+    background-color: #efefef;
+    margin-bottom: 35px;
+    box-shadow: 1px 1px 1px #999; 
+}
+
+#postdiv h2{
+    margin: 0;
+}
+
+
+#contactemail a {
+    color:black;
+}
+
+
+/* Edit Job */
+#editdiv {
+    width: 800px;
+    border: solid 1px #d0cfcf;
+    padding: 10px 10px 0px 10px;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #efefef;
+    margin-bottom: 35px;
+    box-shadow: 1px 1px 1px #999; 
+}
+
+#editdiv h2{
+    margin: 0;
+}
+
+
+/* Show Page */
+.showtable {
+    font-family: Arial;
+    font-size: 13.3px;
+}
+
+.showtable th {
+    padding-right: 15px;
+    text-align: right;
+    color: #E98331
+}
+
+#jobdescription {
+    padding-left: 3px;
+    font-family: Arial;
+    font-size: 13.3px;
+}
+
+#back a {
+    text-decoration: none;
+    font-family: Arial;
+    color: gray;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+#back a:hover {
+    text-decoration: none;
+}
+
+
+/* HEADER */
+.user_nav {
+    font-family: Arial;
+    background-color:rgba(0,0,0,.5);
+    height: 29px;
+    position: absolute; 
+    top:0px; 
+    width: 100%;
+    margin: 0;
+    border: 0;
+    left: 0px;  
+    padding-top: 8px;
+    color: white;
+    font-size: 14.5px;
+    text-decoration: none;
+}
+
+.user_nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.user_nav a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.user_nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.user_nav .toprightA { 
+    color: blue;
+    float: right; 
+    color: white;
+}
+
+.user_nav .toprightA a { 
+    color: blue;
+    color: white;
+}
+
+.user_nav .toprightB { 
+    color: blue;
+    float: right; 
+    color: white;
+}
+
+.user_nav .toprightB a { 
+    color: blue;
+    color: white;
+}
+
+
+/* Body */
+body { 
+    margin: 0px; 
+    padding: 100px 0px 60px 0px; 
+} 
+
+
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    clear: both;
+    font-family: arial;
+    background: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination a{
+    display: inline-block;
+    padding: 0px 9px;
+    margin-right: 4px;
+    border-radius: 3px;
+    border: solid 1px #c0c0c0;
+    background: #e9e9e9;
+    box-shadow: inset 0px 1px 0px rgba(255,255,255, .8), 0px 1px 3px rgba(0,0,0, .1);
+    font-size: .875em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #717171;
+    text-shadow: 0px 1px 0px rgba(255,255,255, 1);
+}
+
+.pagination a:hover {
+    background: #fefefe;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#f0f0f0));
+    background: -moz-linear-gradient(0% 0% 270deg,#FEFEFE, #f0f0f0);
+}
+
+.pagination .current {
+    background: #616161;
+    box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .8);
+    color: #f0f0f0;
+    text-shadow: 0px 0px 3px rgba(0,0,0, .5);
+    display: inline-block;
+    border: solid 1px #c0c0c0;
+    padding: 0px 9px;
+    margin-right: 4px;
+    border-radius: 3px;
+    font-size: .875em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.previous_page {
+  display: none;
+}
+
+.next_page {
+  display: none;
+}
+
+#toplogo {
+    margin-top: -55px;
+    margin-bottom: 12px;
+}
+
+
+
+#sortlink {
+    color: black;
+    font-size: 13px;
+}
+
+#sortlink a{
+    color: black;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+#sortlink a:visited {
+color: black;
+}
+
+#sortlink a:hover {
+color: black;
+text-decoration: underline;
+}
+
+#AdvancedFind {
+    text-align: center;
+    padding-top: 6px;
+    margin-right: 27px;
+}
+
+
+
+
+/* My Table */
+.mytable table {
+    font-family: Helvetica;
+    font-size: 13.5px;
+    border-bottom: 1px solid #ccc;
+    border-collapse: collapse;
+    box-shadow: 1px 1px 1px #999; 
+    width: 100%;
+}
+
+.mytable th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 3px;
+    background-color: #d7d7d7;
+}
+
+.mytable td {
+    border: 1px solid #ccc;
+    padding: 3px 25px 3px 6px; 
+    background-color: white;
+}
+
+.mytable a {
+    color: black;
+}
+
+
+.newjobbutton {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f0c39c), color-stop(1, #fa7e3c) );
+    background:-moz-linear-gradient( center top, #f0c39c 5%, #fa7e3c 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c39c', endColorstr='#fa7e3c');
+    background-color:#f0c39c;
+    -webkit-border-top-left-radius:8px;
+    -moz-border-radius-topleft:8px;
+    border-top-left-radius:8px;
+    -webkit-border-top-right-radius:8px;
+    -moz-border-radius-topright:8px;
+    border-top-right-radius:8px;
+    -webkit-border-bottom-right-radius:8px;
+    -moz-border-radius-bottomright:8px;
+    border-bottom-right-radius:8px;
+    -webkit-border-bottom-left-radius:8px;
+    -moz-border-radius-bottomleft:8px;
+    border-bottom-left-radius:8px;
+    text-indent:0px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    color:#000000;
+    font-family:arial;
+    font-size:15px;
+    font-weight:bold;
+    font-style:normal;
+    height:33px;
+    line-height:33px;
+    width:120px;
+    text-decoration:none;
+    text-align:center;
+}
+
+.newjobbutton:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fa7e3c), color-stop(1, #f0c39c) );
+    background:-moz-linear-gradient( center top, #fa7e3c 5%, #f0c39c 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa7e3c', endColorstr='#f0c39c');
+    background-color:#fa7e3c;
+}
+
+.newjobbutton:active {
+    position:relative;
+    top:1px;
+}
+
+#buttonstyle {
+    float: right;
+    border: solid 0px red;
+    height: 49px;
+}
+
+#myjobswrap {
+    border: solid 0px blue;
+    height: 38px;
+    line-height: 2em;
+    }
+
+#infobox {
+    width: 360px;
+    height: 240px;
+    float: right;
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-top: 9px;
+}
+
+#infoboxheading {
+    text-align: center;
+    font-size: 15px;
+    vertical-align: middle;
+    padding-top: 7px;
+}
+
+#infoboxwrap {
+    width: 399px;
+    height: 261px;
+    float: right;
+    background-image: url('infobox.jpg');
+}
+
+.abouttitle h3 {
+    font-family: Helvetica;
+    font-size: 30px;
+    color: #1668e4;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.browselink {
+    font-family: Tahoma;
+    font-size: 19px;
+    margin-left: 548px;
+    margin-top: 12px;
+    position: absolute;
+    font-weight: normal;
+}
+
+.browselink a {
+    color: #E98331;
+    text-decoration: none;
+}
+
+.browselink a:hover {
+    color: #1B3BE0;
+    text-decoration: underline;
+}
+
+#aboutwrap {
+    background-color:rgba(255,255,255,.7);
+    border: solid 1px #ccc;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 50px; /* bottom = footer height */
+}
+
+
+/* footer */
+.footer li {
+    float: right; 
+    display: inline; 
+    padding: 10px;
+}
+
+#seperate_text {
+    margin-top: 9px;
+    color: #999999; 
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: .9em;
+    padding-left: 10px;
+}
+
+#line {
+    border-bottom: 1px #999999 solid; 
+}
+
+.footer {
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: .9em;
+    clear: both;
+       position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+}
+
+.footer a {
+    color: #555555;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #222;
+    text-decoration: underline;
+}
+
+#seperate_text {
+
+}
+
+#seperate_text_home {
+    padding-left: 10px;
+    margin-top: 9px;
+    color: white; 
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: .9em
+}
+
+.footer #navigation a {
+    color:white;
+}
+
+
+/* SIGN UP */
+.signup {
+    text-align: center;
+    font-family: Helvetica;
+}
+
+.signup h2 {
+    font-size: 30px;
+}
+
+.signup input {
+    width: 300px;
+    border: 1px solid #999;
+    height: 25px;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+.signup input[type="submit"] {
+    width: 145px;
+    margin-left: 161px;
+    margin-top: 7px;
+}
+
+.signup input[type="submit"]:hover {
+    background:#fff;
+    color:#09C;
+}
+
+#label {
+    color: #1668e4;
+    text-align: left;
+    margin-left: 99px;
+    font-weight: bold;
+}
+
+.signup {
+    border: solid 0px blue;
+}
+
+#signupbox {
+    border: solid 1px #ccc;
+    width: 500px;
+    height: 349px;
+    margin: auto;
+    background-color:rgba(255,255,255,.7);
+    box-shadow: 1px 1px 1px #999; 
+}
+
+/* LOGIN BOX */
+.login {
+    text-align: center;
+    font-family: Helvetica;
+}
+
+.login h2 {
+    font-size: 30px;
+}
+
+.login input {
+    width: 300px;
+    border: 1px solid #999;
+    height: 25px;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+.login input[type="submit"] {
+    width: 145px;
+    margin-left: 161px;
+    margin-top: 7px;
+}
+
+.login input[type="submit"]:hover {
+    background:#fff;
+    color:#09C;
+}
+
+#loginlabel {
+    color: #1668e4;
+    text-align: left;
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+.login {
+    border: solid 0px blue;
+}
+
+#loginbox {
+    border: solid 1px #ccc;
+    width: 400px;
+    height: 285px;
+    margin: auto;
+    background-color:rgba(255,255,255,.7);
+    box-shadow: 1px 1px 1px #999; 
+}
+
+#showwrap {
+    border: solid 1px #ccc;
+    width: 750px;
+    padding: 15px;
+    background-color:rgba(255,255,255,.5);
+    box-shadow: 1px 1px 1px #999;
+}
+
+
+/* FLASH NOTICES */
+#flash_notice {
+    color: #024e02;
+    margin-top: -51px;
+    border: solid 1px green;
+    background-color:rgba(162,254,184,.5);
+    width: 350px;
+    font-family: Arial;
+    font-size: 13px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#flash_error {
+    color: #024e02;
+    margin-top: -112px;
+    border: solid 1px green;
+    background-color:rgba(162,254,184,.5);
+    width: 350px;
+    font-family: Arial;
+    font-size: 13px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#flash_alert {
+    color: black;
+    margin-top: -112px;
+    border: solid 1px red;
+    background-color:rgba(255,132,132,.5);
+    width: 350px;
+    font-family: Arial;
+    font-size: 13px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* DIV TO HIDE PURCHASE BUTTON */
+#number {
+    display:none;
+}
+
+
+.field_with_errors {
+  display: inline;
+}
+
+.field_with_errors .message {
+  color: #D00;
+  padding-left: 5px;
+  font-size: 12px;
+  position: absolute;
+}
+
+
