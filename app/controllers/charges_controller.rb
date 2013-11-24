@@ -4,7 +4,6 @@ class ChargesController < ApplicationController
 	end
 
 	def create
-	if @current_user.email != "clowd150@gmail.com"
 		  # Amount in cents
 		  @amount = 50
 
@@ -23,5 +22,5 @@ class ChargesController < ApplicationController
 		rescue Stripe::CardError => e
 		  flash[:error] = e.message
 		  redirect_to charges_path
-		end
+	end
 end
