@@ -31,7 +31,9 @@ class JobsController < ApplicationController
   end
 
   def create
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  if @current_user.email != "clowd150@gmail.com"
+
       # Set your secret key: remember to change this to your live secret key in production
       # See your keys here https://manage.stripe.com/account
       Stripe.api_key = "sk_live_QEKHJV4CMEOLQcQrmY8XdNjO"
@@ -58,6 +60,12 @@ class JobsController < ApplicationController
   	@job.save
 
   	redirect_to '/myjobs/all'
+  else
+    @job = Job.new(params[:job])
+    @job.save
+
+    redirect_to '/myjobs/all'
+  end
   end
 
   def show

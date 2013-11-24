@@ -118,3 +118,81 @@
 
 </div>
 <%= tinymce %>
+
+
+
+
+
+
+
+
+<% if @current_user.email == "clowd150@gmail.com" %>
+<div id="indexwrap">
+
+  <div id="postdiv">
+    <h2>ADMIN Post New Job</h2>
+
+      <div id="infoboxwrap">
+        <div id="infobox">
+          <div id="infoboxheading">
+            
+           <strong>Job Posting Tips</strong>
+          </div>
+          </br>
+          • Use descriptive titles. "Social Marketing Intern" is much more eloquent than "Intern."</br></br>
+
+          • Include tangible job benefits to increase the appeal of your posting.</br></br>
+
+          • If possible, include compensation information. Candidates are a lot more likely to apply if they know the salary potential.</br></br>
+
+          • Be sure to inclue a call to action to "find out more about ABC Inc." This information will be useful in a candidate's evaluation of your position.</br></br>
+        </div>
+      </div>
+
+        <%= form_for @job, :validate => true do |f| %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+
+        <strong><p>
+          <%= f.label :position %><br>
+          <%= f.text_field :position, :class => "step"  %>
+        </p></strong>
+
+        <strong><p>
+          <%= f.label :company %><br>
+          <%= f.text_field :company %>
+        </p></strong>
+
+        <strong><p>
+          <%= f.label :location %><br>
+         <%= f.select :location, ["Carmel", "Carmel Valley", "Gilroy", "Hollister", "Marina", "Monterey", "Pacific Grove", "Prunedale", "Salinas", "Santa Cruz", "Seaside", "Watsonville"], include_blank: true  %>
+        </p></strong>
+
+        <strong><p>
+          <%= f.label :job_type %><br>
+          <%= f.select :job_type, ["Full time", "Part time", "Seasonal/Temp", "Intern", "Contractor"], include_blank: true %>
+        </p></strong>
+
+        <strong><p>
+          <%= f.label :compensation %><br>
+          <%= f.text_field :compensation %>
+        </p></strong></br>
+
+        <strong><p>
+          <%= f.label :description, "Description - Include instructions on how to apply (email, phone number, external link)." %><br>
+          <%= f.text_area :description, :class => "tinymce", :rows => 30, :cols => 80 %>
+        </p></strong>
+
+        <p>
+          <%= f.submit %>
+        </p>
+      <% end %>
+
+      <div id="contactemail">
+      <p style="float: right">For help, contact <%= mail_to "Info@HireMonterey.com" %></p>
+      </div>
+    </div>
+<% end %>
+</div>
+
+
+
