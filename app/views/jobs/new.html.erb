@@ -1,79 +1,137 @@
 <% title "New Job" %>
-
 <% require 'rails_autolink' %>
 
 <% if current_user %>
-<div id="indexwrap">
+  <%= tinymce %>
 
-  <div id="postdiv">
-    <h2>Post New Job | 60-Day Listing For $199.99</h2>
+  <% if @current_user.email == "clowd150@gmail.com" %>
+    <div id="indexwrap">
+      <div id="postdiv">
+        <h2>ADMIN Post New Job</h2>
+        <div id="infoboxwrap">
+          <div id="infobox">
+            <div id="infoboxheading">
+              <strong>Job Posting Tips</strong>
+            </div>
+              </br>
+              • Use descriptive titles. "Social Marketing Intern" is much more eloquent than "Intern."</br></br>
 
-      <div id="infoboxwrap">
-        <div id="infobox">
-          <div id="infoboxheading">
-            
-           <strong>Job Posting Tips</strong>
+              • Include tangible job benefits to increase the appeal of your posting.</br></br>
+
+              • If possible, include compensation information. Candidates are a lot more likely to apply if they know the salary potential.</br></br>
+
+              • Be sure to inclue a call to action to "find out more about ABC Inc." This information will be useful in a candidate's evaluation of your position.</br></br>
           </div>
-          </br>
-          • Use descriptive titles. "Social Marketing Intern" is much more eloquent than "Intern."</br></br>
+        </div>
+        <%= form_for @job, :validate => true do |f| %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
 
-          • Include tangible job benefits to increase the appeal of your posting.</br></br>
+          <strong><p>
+            <%= f.label :position %><br>
+            <%= f.text_field :position, :class => "step"  %>
+          </p></strong>
 
-          • If possible, include compensation information. Candidates are a lot more likely to apply if they know the salary potential.</br></br>
+          <strong><p>
+            <%= f.label :company %><br>
+            <%= f.text_field :company %>
+          </p></strong>
 
-          • Be sure to inclue a call to action to "find out more about ABC Inc." This information will be useful in a candidate's evaluation of your position.</br></br>
+          <strong><p>
+            <%= f.label :location %><br>
+            <%= f.select :location, ["Carmel", "Carmel Valley", "Gilroy", "Hollister", "Marina", "Monterey", "Pacific Grove", "Prunedale", "Salinas", "Santa Cruz", "Seaside", "Watsonville"], include_blank: true  %>
+          </p></strong>
+
+          <strong><p>
+            <%= f.label :job_type %><br>
+            <%= f.select :job_type, ["Full time", "Part time", "Seasonal/Temp", "Intern", "Contractor"], include_blank: true %>
+          </p></strong>
+
+          <strong><p>
+            <%= f.label :compensation %><br>
+            <%= f.text_field :compensation %>
+          </p></strong></br>
+
+          <strong><p>
+            <%= f.label :description, "Description - Include instructions on how to apply (email, phone number, external link)." %><br>
+            <%= f.text_area :description, :class => "tinymce", :rows => 30, :cols => 80 %>
+          </p></strong>
+
+          <p>
+            <%= f.submit %>
+          </p>
+        <% end %>
+        <div id="contactemail">
+          <p style="float: right">For help, contact <%= mail_to "Info@HireMonterey.com" %></p>
         </div>
       </div>
+    </div>
+  <% else %>
+    <div id="indexwrap">
+      <div id="postdiv">
+        <h2>Post New Job | 60-Day Listing For $199.99</h2>
+          <div id="infoboxwrap">
+            <div id="infobox">
+              <div id="infoboxheading">
+                <strong>Job Posting Tips</strong>
+              </div>
+              </br>
+              • Use descriptive titles. "Social Marketing Intern" is much more eloquent than "Intern."</br></br>
 
-        <%= form_for @job, :validate => true do |f| %>
-        <%= f.hidden_field :user_id, :value => current_user.id %>
+              • Include tangible job benefits to increase the appeal of your posting.</br></br>
 
-        <strong><p>
-          <%= f.label :position %><br>
-          <%= f.text_field :position, :class => "step"  %>
-        </p></strong>
+              • If possible, include compensation information. Candidates are a lot more likely to apply if they know the salary potential.</br></br>
 
-        <strong><p>
-          <%= f.label :company %><br>
-          <%= f.text_field :company %>
-        </p></strong>
-
-        <strong><p>
-          <%= f.label :location %><br>
-         <%= f.select :location, ["Carmel", "Carmel Valley", "Gilroy", "Hollister", "Marina", "Monterey", "Pacific Grove", "Prunedale", "Salinas", "Santa Cruz", "Seaside", "Watsonville"], include_blank: true  %>
-        </p></strong>
-
-        <strong><p>
-          <%= f.label :job_type %><br>
-          <%= f.select :job_type, ["Full time", "Part time", "Seasonal/Temp", "Intern", "Contractor"], include_blank: true %>
-        </p></strong>
-
-        <strong><p>
-          <%= f.label :compensation %><br>
-          <%= f.text_field :compensation %>
-        </p></strong></br>
-
-        <strong><p>
-          <%= f.label :description, "Description - Include instructions on how to apply (email, phone number, external link)." %><br>
-          <%= f.text_area :description, :class => "tinymce", :rows => 30, :cols => 80 %>
-        </p></strong>
-
-        <p>
-
-          <div id="number">
-              <form action="" method="POST">
-                <script
-                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="pk_live_jgLcTq85KaN4JaYbSYOl5ugt"
-                  data-amount="1"
-                  data-name="Hire Monterey"
-                  data-description="60-Day Listing ($0.50)">
-                </script>
+              • Be sure to inclue a call to action to "find out more about ABC Inc." This information will be useful in a candidate's evaluation of your position.</br></br>
+            </div>
           </div>
-        </p>
-      <% end %>
+        <%= form_for @job, :validate => true do |f| %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
 
-          <script>
+          <strong><p>
+            <%= f.label :position %><br>
+            <%= f.text_field :position, :class => "step"  %>
+          </p></strong>
+
+          <strong><p>
+            <%= f.label :company %><br>
+            <%= f.text_field :company %>
+          </p></strong>
+
+          <strong><p>
+            <%= f.label :location %><br>
+            <%= f.select :location, ["Carmel", "Carmel Valley", "Gilroy", "Hollister", "Marina", "Monterey", "Pacific Grove", "Prunedale", "Salinas", "Santa Cruz", "Seaside", "Watsonville"], include_blank: true  %>
+          </p></strong>
+
+          <strong><p>
+            <%= f.label :job_type %><br>
+            <%= f.select :job_type, ["Full time", "Part time", "Seasonal/Temp", "Intern", "Contractor"], include_blank: true %>
+          </p></strong>
+
+          <strong><p>
+            <%= f.label :compensation %><br>
+            <%= f.text_field :compensation %>
+          </p></strong></br>
+
+          <strong><p>
+            <%= f.label :description, "Description - Include instructions on how to apply (email, phone number, external link)." %><br>
+            <%= f.text_area :description, :class => "tinymce", :rows => 30, :cols => 80 %>
+          </p></strong>
+
+          <p>
+          <div id="number">
+            <form action="" method="POST">
+              <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_live_jgLcTq85KaN4JaYbSYOl5ugt"
+                data-amount="1"
+                data-name="Hire Monterey"
+                data-description="60-Day Listing ($0.50)">
+              </script>
+          </div>
+          </p>
+        <% end %>
+
+        <script>
             $('input[type="text"], select').bind('keyup change',function(){
 
                 // get elements that are empty.
@@ -87,10 +145,10 @@
                 // check if there are any empty elements, if there are none, show numbers, else hide number.
                 !empty.length ? number.show() : number.hide();
             });
-            </script>
+        </script>
 
 
-            <script>
+        <script>
                 $(function() {
              
                 $("form").bind("keypress", function(e) {
@@ -98,101 +156,22 @@
                   });
              
             });
-          </script>
-      <div id="contactemail">
-      <p style="float: right">For help, contact <%= mail_to "Info@HireMonterey.com" %></p>
-      </div>
-    </div>
-
- 
-  <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser   settings.  
-  </noscript>  
-</div> 
-
-    <% else %>
-      <p>
-        Please sign in to continue.
-      </p>  
-  <% end %>
-
-
-</div>
-<%= tinymce %>
-
-
-
-
-
-
-
-
-<% if @current_user.email == "clowd150@gmail.com" %>
-<div id="indexwrap">
-
-  <div id="postdiv">
-    <h2>ADMIN Post New Job</h2>
-
-      <div id="infoboxwrap">
-        <div id="infobox">
-          <div id="infoboxheading">
-            
-           <strong>Job Posting Tips</strong>
-          </div>
-          </br>
-          • Use descriptive titles. "Social Marketing Intern" is much more eloquent than "Intern."</br></br>
-
-          • Include tangible job benefits to increase the appeal of your posting.</br></br>
-
-          • If possible, include compensation information. Candidates are a lot more likely to apply if they know the salary potential.</br></br>
-
-          • Be sure to inclue a call to action to "find out more about ABC Inc." This information will be useful in a candidate's evaluation of your position.</br></br>
+        </script>
+        <div id="contactemail">
+          <p style="float: right">For help, contact <%= mail_to "Info@HireMonterey.com" %></p>
         </div>
       </div>
 
-        <%= form_for @job, :validate => true do |f| %>
-        <%= f.hidden_field :user_id, :value => current_user.id %>
+      <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser   settings.  
+      </noscript>  
+    </div> 
+  <% end %>
 
-        <strong><p>
-          <%= f.label :position %><br>
-          <%= f.text_field :position, :class => "step"  %>
-        </p></strong>
-
-        <strong><p>
-          <%= f.label :company %><br>
-          <%= f.text_field :company %>
-        </p></strong>
-
-        <strong><p>
-          <%= f.label :location %><br>
-         <%= f.select :location, ["Carmel", "Carmel Valley", "Gilroy", "Hollister", "Marina", "Monterey", "Pacific Grove", "Prunedale", "Salinas", "Santa Cruz", "Seaside", "Watsonville"], include_blank: true  %>
-        </p></strong>
-
-        <strong><p>
-          <%= f.label :job_type %><br>
-          <%= f.select :job_type, ["Full time", "Part time", "Seasonal/Temp", "Intern", "Contractor"], include_blank: true %>
-        </p></strong>
-
-        <strong><p>
-          <%= f.label :compensation %><br>
-          <%= f.text_field :compensation %>
-        </p></strong></br>
-
-        <strong><p>
-          <%= f.label :description, "Description - Include instructions on how to apply (email, phone number, external link)." %><br>
-          <%= f.text_area :description, :class => "tinymce", :rows => 30, :cols => 80 %>
-        </p></strong>
-
-        <p>
-          <%= f.submit %>
-        </p>
-      <% end %>
-
-      <div id="contactemail">
-      <p style="float: right">For help, contact <%= mail_to "Info@HireMonterey.com" %></p>
-      </div>
-    </div>
+<% else %>
+  <p>
+    Please sign in to continue.
+  </p>  
 <% end %>
-</div>
 
 
 
