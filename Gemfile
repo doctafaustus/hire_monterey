@@ -42,3 +42,5 @@ gem 'rails_autolink'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'client_side_validations'
+
+gem 'google-analytics-rails'

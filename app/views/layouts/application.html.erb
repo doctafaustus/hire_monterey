@@ -15,13 +15,19 @@ display the homepage background image on the homepage only-->
 "rails.validations"  %>
   <%= csrf_meta_tags %>
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<style>
+a img {
+    border: 0;
+}
+</style>
+<%= analytics_init if Rails.env.production? %>
 </head>
 
 
 <body>
         <div id="indexwrap">
-          <div id="toplogo">
-          <%= link_to image_tag("smalllogo.png"), jobs_path  if params[:action] != 'home' %>
+          <div id="toplogo"><span style="border: 0">
+          <%= link_to image_tag("smalllogo.png"), jobs_path  if params[:action] != 'home' %></span>
           <% if params[:action] == 'index'%>
             <span style="float: right; margin-top: 28px; color: black; font-family: Arial; font-size: 13px">
 
