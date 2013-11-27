@@ -103,6 +103,7 @@
 		<div id="indexsearchbutton2">
 			<%= f.submit "Search" %>
 		</div>
+
 	<% end %>
 
 
@@ -119,11 +120,18 @@
 				</br>
 				<% plain_text = strip_tags(job.description) %>
 				<%= plain_text[0, 150].html_safe + "..." %>
-
 		</div>
-	</div>
+
+
 
 	<% end %>
+		<% if @results.count < 11 %>
+			<div style="border: solid 0px blue; height: 30px; margin-bottom: 50px">
+				
+			</div>
+		<% end %>
+	</div>
+
 </div>
 
 

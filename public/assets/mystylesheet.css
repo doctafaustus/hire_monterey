@@ -74,6 +74,7 @@
     outline: 1px solid #d0cfcf;
     padding-bottom: 8px;
         box-shadow: 1px 1px 1px #999;
+    margin-bottom: 66px;
 }
 
 #rightcol {
@@ -370,7 +371,7 @@ body {
     font-family: arial;
     background: #f2f2f2;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 69px;
 }
 
 .pagination a{
