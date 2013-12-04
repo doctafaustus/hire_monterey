@@ -50,7 +50,7 @@ class JobsController < ApplicationController
 
       # Charge the Customer instead of the card
       Stripe::Charge.create(
-          :amount => 50, # in cents
+          :amount => 19999, # in cents
           :description => '60-Day Job Listing',
           :currency => "usd",
           :customer => customer.id
