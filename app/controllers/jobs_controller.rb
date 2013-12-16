@@ -32,40 +32,11 @@ class JobsController < ApplicationController
 
   def create
   @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  if @current_user.email != "clowd150@gmail.com"
-
-      # Set your secret key: remember to change this to your live secret key in production
-      # See your keys here https://manage.stripe.com/account
-      Stripe.api_key = "sk_live_QEKHJV4CMEOLQcQrmY8XdNjO"
-
-      # Get the credit card details submitted by the form
-      token = params[:stripeToken]
-
-      # Create a Customer
-      customer = Stripe::Customer.create(
-        :email => @current_user.email,
-        :card => token,
-        :description => "60-Day Job Listing"
-      )
-
-      # Charge the Customer instead of the card
-      Stripe::Charge.create(
-          :amount => 19999, # in cents
-          :description => '60-Day Job Listing',
-          :currency => "usd",
-          :customer => customer.id
-      )
 
   	@job = Job.new(params[:job])
   	@job.save
 
   	redirect_to '/myjobs/all'
-  else
-    @job = Job.new(params[:job])
-    @job.save
-
-    redirect_to '/myjobs/all'
-  end
   end
 
   def show

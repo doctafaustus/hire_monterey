@@ -21,6 +21,7 @@ get "/privacy" => "myjobs#privacy", :as => "privacy"
 get "about" => "myjobs#about", :as => "about"
 get "contact" => "myjobs#contact", :as => "contact"
 get "terms" => "myjobs#terms", :as => "terms"
+get "advertise" => "myjobs#advertise", :as => "advertise"
 
 resources :charges
   # The priority is based upon order of creation:

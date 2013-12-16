@@ -61,9 +61,27 @@
     outline: 1px solid #d0cfcf;
 }
 
+#headerwrap {
+    width:1070px;
+    margin: 0 auto;
+    border: solid 0px orange;
+}
+
 #indexwrap {
     width:800px;
     margin: 0 auto;
+    border: solid 0px red;
+}
+
+#indexwrap2 {
+    width:800px;
+    border: solid 0px red;
+}
+
+#indexwrap3 {
+    width:1070px;
+    margin: 0 auto;
+    border: solid 0px gray;
 }
 
 #leftcol {
@@ -73,16 +91,35 @@
     font-family: Tahoma, Geneva, sans-serif;
     outline: 1px solid #d0cfcf;
     padding-bottom: 8px;
-        box-shadow: 1px 1px 1px #999;
+    box-shadow: 1px 1px 1px #999;
     margin-bottom: 66px;
+    border: solid 0px green;
 }
 
 #rightcol {
     float:right;
     width:609px;
+    border: solid 0px blue;
 }
 
+#adtext {
+    width: 200px;
+    border: solid 0px yellow;
+    float: right;
+    margin-top: -20px;
+    font-family: Arial;
+    color: gray;
+    font-size: 14px;
+}
 
+#ad {
+    float:right;
+    background-color: white;
+    height: 250px;
+    width: 250px;
+    border: solid 0px purple;
+    clear:right;
+}
 
 
 /* Universal Text Styling */
@@ -371,7 +408,7 @@ body {
     font-family: arial;
     background: #f2f2f2;
     padding: 20px;
-    margin-bottom: 69px;
+    margin-bottom: -10px;
 }
 
 .pagination a{
@@ -421,6 +458,7 @@ body {
 #toplogo {
     margin-top: -55px;
     margin-bottom: 12px;
+    padding-right: 272px;
 }
 
 
@@ -842,3 +880,84 @@ body {
 }
 
 
+#register {
+    font-family: arial;
+    font-size: 13px;
+}
+
+#register a:visited {
+    color: black;
+}
+
+
+/* ADVERTISE PAGE */
+#advertiseleft {
+    float: left;
+}
+
+#advertisetext1 {
+    font-family: arial;
+    font-size: 13px;
+    width: 385px;
+    float: right;
+    padding-right: 10px;
+}
+
+#advertisetext1 a {
+    color: black;
+}
+
+#advertisetext1 a:visited {
+    color: black;
+}
+
+#advertisetext2 {
+    font-family: arial;
+    font-size: 13px;
+    clear: both;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+.prices {
+    margin-top: 14px;
+    border: solid 1px black;
+    width: 210px;
+    border-collapse: collapse;
+}
+
+.prices td {
+    padding-left: 5px;
+    border: solid 1px black;
+}
+
+.prices tr {
+    line-height: 18px;
+}
+
+.prices th {
+    border: solid 1px black;
+}
+
+.adbuy {
+    border: solid 0px gray;
+    border-collapse: collapse;
+}
+
+.adbuy td {
+    padding-left: 5px;
+    border: solid 0px gray;
+    vertical-align:middle;
+    padding-left: 20px;
+}
+
+.adbuy th {
+    border: solid 0px gray;
+    line-height: 20px;
+}
+
+.adbuy tr {
+    line-height: 15px;
+}

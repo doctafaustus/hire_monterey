@@ -3,4 +3,5 @@ class Job < ActiveRecord::Base
   belongs_to :user
 
   validates_presence_of :position, :company, :location, :job_type, :compensation
+  validates :position, :company, :compensation, length: {maximum: 51}
 end

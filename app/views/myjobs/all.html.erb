@@ -33,7 +33,7 @@
                       <!--<td><%= job.created_at.strftime("%b %d, %Y") %></td>-->
                      <td style="background-color: #e2dfe9"><%= job.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%b %d, %Y") %></td>
                      <td style="background-color: #e2dfe9">
-                     <%= link_to "Delete", job_path(job), method: :delete, data: { confirm: 'Deleting a job ends your transaction with Hire Monterey and permanently removes your listing from the database. Are you sure you want to delete this job?'} %></td>
+                     <%= link_to "Delete", job_path(job), method: :delete, data: { confirm: 'Deleting a job cannot be undone. Are you sure you want to delete this job?'} %></td>
                      </tr>
                <% else %>
                   <tr>
@@ -42,7 +42,7 @@
                       <!--<td><%= job.created_at.strftime("%b %d, %Y") %></td>-->
                      <td><%= job.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%b %d, %Y") %></td>
                      <td><%= link_to "Edit", edit_job_path(job) %>&nbsp;&nbsp;|&nbsp;
-                     <%= link_to "Delete", job_path(job), method: :delete, data: { confirm: 'Deleting a job ends your transaction with Hire Monterey and permanently removes your listing from the database. Are you sure you want to delete this job?'} %></td>
+                     <%= link_to "Delete", job_path(job), method: :delete, data: { confirm: 'Deleting a job cannot be undone. Are you sure you want to delete this job?'} %></td>
                      </tr>
                <% end %>
             <% end %>
@@ -82,7 +82,7 @@
                          <!--<td><%= job.created_at.strftime("%b %d, %Y") %></td>-->
                         <td style="background-color: #e2dfe9"><%= job.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%b %d, %Y") %></td>
                         <td style="background-color: #e2dfe9">
-                        <%= link_to "Delete", job_path(job), method: :delete, data: { confirm: 'Deleting a job ends your transaction with Hire Monterey and permanently removes your listing from the database. Are you sure you want to delete this job?'} %></td>
+                        <%= link_to "Delete", job_path(job), method: :delete, data: { confirm: 'Deleting a job cannot be undone. Are you sure you want to delete this job?'} %></td>
                         </tr>
                   <% else %>
                      <tr>
@@ -93,7 +93,7 @@
                          <!--<td><%= job.created_at.strftime("%b %d, %Y") %></td>-->
                         <td><%= job.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%b %d, %Y") %></td>
                         <td><%= link_to "Edit", edit_job_path(job) %>&nbsp;&nbsp;|&nbsp;
-                        <%= link_to "Delete", job_path(job), method: :delete, data: { confirm: 'Deleting a job ends your transaction with Hire Monterey and permanently removes your listing from the database. Are you sure you want to delete this job?'} %></td>
+                        <%= link_to "Delete", job_path(job), method: :delete, data: { confirm: 'Deleting a job cannot be undone. Are you sure you want to delete this job?'} %></td>
                         </tr>
                   <% end %>
                <% end %>

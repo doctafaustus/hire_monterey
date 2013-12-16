@@ -22,14 +22,15 @@ a img {
 </style>
 <%= analytics_init if Rails.env.production? %>
 
-<meta property="og:image" content="http://imageshack.com/a/img189/357/5rr2.jpg" />
-<meta property="og:title" content="Hire Monterey" />
-<meta property="og:description" content="Search Jobs in the Monterey Bay Area" />
+<meta name="description" content="Find your next career in the Monterey Bay Area. Post a job for free or search our jobs board.">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 </head>
 
 
 <body>
-        <div id="indexwrap">
+  <div id="headerwrap">  
           <div id="toplogo"><span style="border: 0">
           <%= link_to image_tag("smalllogo.png"), jobs_path  if params[:action] != 'home' %></span>
           <% if params[:action] == 'index'%>
@@ -70,9 +71,9 @@ a img {
 
           </span>
         <% end %>
+  </div>
 
-
-          </div>
+          
         </div>
       <div class="user_nav">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Home", root_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -86,8 +87,8 @@ a img {
           </div>
         <% else %>
             <div class="toprightB">
-            <%= link_to "Sign up to post job", sign_up_path %> &nbsp;&nbsp;|&nbsp;&nbsp;
-            <%= link_to "Employer log in", log_in_path %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!-- Add link to new job here? -->
+            <%= link_to "Advertise", advertise_path %> &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to "Employer Log In / Register", log_in_path %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!-- Add link to new job here? -->
           </div>
         <% end %>
       </div>

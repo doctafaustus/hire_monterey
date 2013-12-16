@@ -68,7 +68,7 @@
   <% else %>
     <div id="indexwrap">
       <div id="postdiv">
-        <h2>Post New Job | 60-Day Listing For $199.99</h2>
+        <h2>Post New Job</h2>
           <div id="infoboxwrap">
             <div id="infobox">
               <div id="infoboxheading">
@@ -119,14 +119,7 @@
 
           <p>
           <div id="number">
-            <form action="" method="POST">
-              <script
-                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="pk_live_jgLcTq85KaN4JaYbSYOl5ugt"
-                data-amount="19999"
-                data-name="Hire Monterey"
-                data-description="60-Day Listing ($199.99)">
-              </script>
+              <%= f.submit %>
           </div>
           </p>
         <% end %>
