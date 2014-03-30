@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 
     @search = Job.search(params[:q])
     @results = @search.result
-    @results = @results.where("created_at > ?", Time.now - 60.days)
+    @results = @results.where("created_at < ?", Time.now)
     @jobs = @results.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
     # Date Posted Labels
     @oneday_y = Time.now - 1.days
